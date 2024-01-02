@@ -28,12 +28,11 @@ double DivideNode::Calc() const{
 	return left_->Calc() / right_->Calc();
 }
 
-
 double UminsNode::Calc () const{
 	return - child_->Calc();
 }
 
 UnaryNode::~UnaryNode()
 {
-	delete child_;
+	delete child_; 	 
 }

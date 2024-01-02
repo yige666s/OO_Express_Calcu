@@ -1,6 +1,15 @@
 #ifndef _NODE_H_
 #define _NODE_H_
-class Node{
+
+class Noncopyable{
+protected:
+	Noncopyable(){}	//不需要实例化，只是用来继承
+	~Noncopyable(){}
+private:
+	Noncopyable(const Noncopyable&);
+	const Noncopyable& operator=(const Noncopyable&);
+};
+class Node : private Noncopyable{	// Node实现继承Noncopyable，不需要实现Nonecopyable接口
 	public:
 		virtual double Calc() const= 0;
 		virtual ~Node();
@@ -62,3 +71,4 @@ class UminsNode : public UnaryNode{
 };
 
 #endif	//_NODE_H_
+
