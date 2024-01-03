@@ -1,5 +1,6 @@
 #include "node.h"
 #include <cmath>
+#include <iostream>
 
 double NumerNode::Calc() const{
 	return number_;
@@ -24,8 +25,12 @@ double MutilNode::Calc() const{
 
 double DivideNode::Calc() const{
 	double divisor = right_->Calc();
-	static_assert(divisor != 0, "divisor can't be zero");
-	return left_->Calc() / right_->Calc();
+	if( divisor != 0){
+			return left_->Calc() / right_->Calc();
+	}else{
+		std::cout<<"Error: Divisor by zero"<<std::endl;
+		return HUGE_VAL;
+	}
 }
 
 double UminsNode::Calc () const{

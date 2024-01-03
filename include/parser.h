@@ -9,7 +9,6 @@ public:
 	double Calculate() const;
 private:
 	Scanner& scanner_;
-
 };
 
 #endif //_PARSER_H_

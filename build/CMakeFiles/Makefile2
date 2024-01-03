@@ -54,7 +54,7 @@ RM = /usr/local/lib/python3.9/dist-packages/cmake/data/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yige666/bsae_programming/cpp/OO_express_calcu
+CMAKE_SOURCE_DIR = /home/yige666/bsae_programming/cpp/OO_express_calcu/source
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/yige666/bsae_programming/cpp/OO_express_calcu/build
@@ -63,57 +63,42 @@ CMAKE_BINARY_DIR = /home/yige666/bsae_programming/cpp/OO_express_calcu/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: source/all
+all: CMakeFiles/main.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: source/preinstall
+preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: source/clean
+clean: CMakeFiles/main.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory source
-
-# Recursive "all" directory target.
-source/all: source/CMakeFiles/OO_express_calcu.dir/all
-.PHONY : source/all
-
-# Recursive "preinstall" directory target.
-source/preinstall:
-.PHONY : source/preinstall
-
-# Recursive "clean" directory target.
-source/clean: source/CMakeFiles/OO_express_calcu.dir/clean
-.PHONY : source/clean
-
-#=============================================================================
-# Target rules for target source/CMakeFiles/OO_express_calcu.dir
+# Target rules for target CMakeFiles/main.dir
 
 # All Build rule for target.
-source/CMakeFiles/OO_express_calcu.dir/all:
-	$(MAKE) $(MAKESILENT) -f source/CMakeFiles/OO_express_calcu.dir/build.make source/CMakeFiles/OO_express_calcu.dir/depend
-	$(MAKE) $(MAKESILENT) -f source/CMakeFiles/OO_express_calcu.dir/build.make source/CMakeFiles/OO_express_calcu.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=1,2,3 "Built target OO_express_calcu"
-.PHONY : source/CMakeFiles/OO_express_calcu.dir/all
+CMakeFiles/main.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target main"
+.PHONY : CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
-source/CMakeFiles/OO_express_calcu.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/CMakeFiles/OO_express_calcu.dir/all
+CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles 0
-.PHONY : source/CMakeFiles/OO_express_calcu.dir/rule
+.PHONY : CMakeFiles/main.dir/rule
 
 # Convenience name for target.
-OO_express_calcu: source/CMakeFiles/OO_express_calcu.dir/rule
-.PHONY : OO_express_calcu
+main: CMakeFiles/main.dir/rule
+.PHONY : main
 
 # clean rule for target.
-source/CMakeFiles/OO_express_calcu.dir/clean:
-	$(MAKE) $(MAKESILENT) -f source/CMakeFiles/OO_express_calcu.dir/build.make source/CMakeFiles/OO_express_calcu.dir/clean
-.PHONY : source/CMakeFiles/OO_express_calcu.dir/clean
+CMakeFiles/main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
+.PHONY : CMakeFiles/main.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

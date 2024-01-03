@@ -9,6 +9,7 @@ private:
 	Noncopyable(const Noncopyable&);
 	const Noncopyable& operator=(const Noncopyable&);
 };
+
 class Node : private Noncopyable{	// Node实现继承Noncopyable，不需要实现Nonecopyable接口
 	public:
 		virtual double Calc() const= 0;
@@ -40,19 +41,19 @@ class AddNode : public BinaryNode{
 
 class SubNode : public BinaryNode{
 	public:
-		AddNode(Node* left,Node* right) : BinaryNode(left,right){}
+		SubNode(Node* left,Node* right) : BinaryNode(left,right){}
 		double Calc() const;
 };
 
 class MutilNode : public BinaryNode{
 	public:
-		AddNode(Node* left,Node* right) : BinaryNode(left,right){}
+		MutilNode(Node* left,Node* right) : BinaryNode(left,right){}
 		double Calc() const;
 };
 
 class DivideNode : public BinaryNode{
 	public:
-		AddNode(Node* left,Node* right) : BinaryNode(left,right){}
+		DivideNode(Node* left,Node* right) : BinaryNode(left,right){}
 		double Calc() const;
 };
 

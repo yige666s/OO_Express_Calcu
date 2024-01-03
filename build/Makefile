@@ -57,7 +57,7 @@ RM = /usr/local/lib/python3.9/dist-packages/cmake/data/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yige666/bsae_programming/cpp/OO_express_calcu
+CMAKE_SOURCE_DIR = /home/yige666/bsae_programming/cpp/OO_express_calcu/source
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/yige666/bsae_programming/cpp/OO_express_calcu/build
@@ -117,17 +117,113 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named OO_express_calcu
+# Target rules for targets named main
 
 # Build rule for target.
-OO_express_calcu: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 OO_express_calcu
-.PHONY : OO_express_calcu
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-OO_express_calcu/fast:
-	$(MAKE) $(MAKESILENT) -f source/CMakeFiles/OO_express_calcu.dir/build.make source/CMakeFiles/OO_express_calcu.dir/build
-.PHONY : OO_express_calcu/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+node.o: node.cpp.o
+.PHONY : node.o
+
+# target to build an object file
+node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/node.cpp.o
+.PHONY : node.cpp.o
+
+node.i: node.cpp.i
+.PHONY : node.i
+
+# target to preprocess a source file
+node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/node.cpp.i
+.PHONY : node.cpp.i
+
+node.s: node.cpp.s
+.PHONY : node.s
+
+# target to generate assembly for a file
+node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/node.cpp.s
+.PHONY : node.cpp.s
+
+parser.o: parser.cpp.o
+.PHONY : parser.o
+
+# target to build an object file
+parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/parser.cpp.o
+.PHONY : parser.cpp.o
+
+parser.i: parser.cpp.i
+.PHONY : parser.i
+
+# target to preprocess a source file
+parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/parser.cpp.i
+.PHONY : parser.cpp.i
+
+parser.s: parser.cpp.s
+.PHONY : parser.s
+
+# target to generate assembly for a file
+parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/parser.cpp.s
+.PHONY : parser.cpp.s
+
+scanner.o: scanner.cpp.o
+.PHONY : scanner.o
+
+# target to build an object file
+scanner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/scanner.cpp.o
+.PHONY : scanner.cpp.o
+
+scanner.i: scanner.cpp.i
+.PHONY : scanner.i
+
+# target to preprocess a source file
+scanner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/scanner.cpp.i
+.PHONY : scanner.cpp.i
+
+scanner.s: scanner.cpp.s
+.PHONY : scanner.s
+
+# target to generate assembly for a file
+scanner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/scanner.cpp.s
+.PHONY : scanner.cpp.s
 
 # Help Target
 help:
@@ -137,7 +233,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... OO_express_calcu"
+	@echo "... main"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... node.o"
+	@echo "... node.i"
+	@echo "... node.s"
+	@echo "... parser.o"
+	@echo "... parser.i"
+	@echo "... parser.s"
+	@echo "... scanner.o"
+	@echo "... scanner.i"
+	@echo "... scanner.s"
 .PHONY : help
 
 

@@ -1,2 +1,2 @@
-# Empty dependencies file for OO_express_calcu.
+# Empty dependencies file for main.
 # This may be replaced when dependencies are built.
