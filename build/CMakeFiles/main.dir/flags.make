@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/yige666/bsae_programming/cpp/OO_express_calcu/src/../include
 
 CXX_FLAGS = 
 

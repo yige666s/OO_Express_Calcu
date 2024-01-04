@@ -2,7 +2,7 @@
 #include <cmath>
 #include <iostream>
 
-double NumerNode::Calc() const{
+double NumberNode::Calc() const{
 	return number_;
 }
 

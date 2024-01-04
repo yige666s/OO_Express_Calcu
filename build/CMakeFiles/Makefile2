@@ -54,7 +54,7 @@ RM = /usr/local/lib/python3.9/dist-packages/cmake/data/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yige666/bsae_programming/cpp/OO_express_calcu/source
+CMAKE_SOURCE_DIR = /home/yige666/bsae_programming/cpp/OO_express_calcu/src
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/yige666/bsae_programming/cpp/OO_express_calcu/build

@@ -1,4 +1,4 @@
-# Install script for directory: /home/yige666/bsae_programming/cpp/OO_express_calcu/source
+# Install script for directory: /home/yige666/bsae_programming/cpp/OO_express_calcu/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -13,12 +13,12 @@ private:
 class Node : private Noncopyable{	// Node实现继承Noncopyable，不需要实现Nonecopyable接口
 	public:
 		virtual double Calc() const= 0;
-		virtual ~Node();
+		virtual ~Node(){}
 };
 
-class NumerNode : public Node{
+class NumberNode : public Node{
 	public:
-		NumerNode(double number) : number_(number){}
+		NumberNode(double number) : number_(number){}
 		double Calc() const;
 	private:
 		double number_;

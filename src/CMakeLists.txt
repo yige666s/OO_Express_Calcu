@@ -2,8 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 
 project(OO_express_calcu LANGUAGES CXX)
 
-set(HEADER_DIR ${CMAKE_CURRENT_SOURCE_DIR}/header)
-include_directories(${HEADER_DIRS})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../include)
 aux_source_directory(. SRCS_DIR)
 
 # add_library(Node node.cpp)
