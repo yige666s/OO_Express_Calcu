@@ -15,29 +15,52 @@ void Parser::Parse(){
 Node* Parser::Expr(){
 	Node* node = Term();
 	EToken token = scanner_.Token();
-	if(token == TOKEN_PLUS){
-		scanner_.Accept();
-		Node* nodeRight = Expr();
-		node = new AddNode(node, nodeRight);
-	}else if(token == TOKEN_MINUS){
-		scanner_.Accept();
-		Node* nodeRight = Expr();
-		node = new SubNode(node, nodeRight);
+	// if(token == TOKEN_PLUS){
+	// 	scanner_.Accept();
+	// 	Node* nodeRight = Expr();
+	// 	node = new AddNode(node, nodeRight);
+	// }else if(token == TOKEN_MINUS){
+	// 	scanner_.Accept();
+	// 	Node* nodeRight = Expr();
+	// 	node = new SubNode(node, nodeRight);
+	// }
+	if(token == TOKEN_PLUS || TOKEN_MINUS){
+		// Expr := Term ( '+' Term | '-' Term )
+		MutilpleNode* mutipleNode = new SumNode(node);
+		do{
+			scanner_.Accept();
+			Node* nextNode = Term();
+			mutipleNode->AppendChild(nextNode,(token == TOKEN_PLUS));
+			token = scanner_.Token();
+		}while(token == TOKEN_PLUS || TOKEN_MINUS);
+		node = mutipleNode; 
 	}
+
 	return node;
 }
 
 Node* Parser::Term(){
 	Node* node = Factor();
 	EToken token = scanner_.Token();
-	if(token == TOKEN_MUTIPLY){
-		scanner_.Accept();
-		Node* nodeRight = Term();
-		node = new MutilNode(node, nodeRight);
-	}else if(token == TOKEN_DIVIDE){
-		scanner_.Accept();
-		Node* nodeRight = Term();
-		node = new DivideNode(node, nodeRight);
+	// if(token == TOKEN_MUTIPLY){
+	// 	scanner_.Accept();
+	// 	Node* nodeRight = Term();
+	// 	node = new MutilNode(node, nodeRight);
+	// }else if(token == TOKEN_DIVIDE){
+	// 	scanner_.Accept();
+	// 	Node* nodeRight = Term();
+	// 	node = new DivideNode(node, nodeRight);
+	// }
+	if(token == TOKEN_MUTIPLY || TOKEN_DIVIDE){
+		// Term := Factor ( '*' Factor | '/' Factor )
+		MutilpleNode* mutipleNode = new ProductNode(node);
+		do{
+			scanner_.Accept();
+			Node* nextNode = Term();
+			mutipleNode->AppendChild(nextNode,(token == TOKEN_PLUS));
+			token = scanner_.Token();
+		}while(token == TOKEN_MUTIPLY || TOKEN_DIVIDE);
+		node = mutipleNode; 
 	}
 	return node;
 }

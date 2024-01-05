@@ -1,6 +1,8 @@
 #ifndef _NODE_H_
 #define _NODE_H_
 
+#include <vector>
+
 class Noncopyable{
 protected:
 	Noncopyable(){}	//不需要实例化，只是用来继承
@@ -33,29 +35,29 @@ class BinaryNode : public Node{
 		Node* const right_;
 };
 
-class AddNode : public BinaryNode{
-	public:
-		AddNode(Node* left,Node* right) : BinaryNode(left,right){}
-		double Calc() const;
-};
+// class AddNode : public BinaryNode{
+// 	public:
+// 		AddNode(Node* left,Node* right) : BinaryNode(left,right){}
+// 		double Calc() const;
+// };
 
-class SubNode : public BinaryNode{
-	public:
-		SubNode(Node* left,Node* right) : BinaryNode(left,right){}
-		double Calc() const;
-};
+// class SubNode : public BinaryNode{
+// 	public:
+// 		SubNode(Node* left,Node* right) : BinaryNode(left,right){}
+// 		double Calc() const;
+// };
 
-class MutilNode : public BinaryNode{
-	public:
-		MutilNode(Node* left,Node* right) : BinaryNode(left,right){}
-		double Calc() const;
-};
+// class MutilNode : public BinaryNode{
+// 	public:
+// 		MutilNode(Node* left,Node* right) : BinaryNode(left,right){}
+// 		double Calc() const;
+// };
 
-class DivideNode : public BinaryNode{
-	public:
-		DivideNode(Node* left,Node* right) : BinaryNode(left,right){}
-		double Calc() const;
-};
+// class DivideNode : public BinaryNode{
+// 	public:
+// 		DivideNode(Node* left,Node* right) : BinaryNode(left,right){}
+// 		double Calc() const;
+// };
 
 class UnaryNode : public Node{
 public:
@@ -71,5 +73,30 @@ class UminsNode : public UnaryNode{
 		double Calc() const;
 };
 
-#endif	//_NODE_H_
+class MutilpleNode : public Node{
+public:
+	MutilpleNode(Node* node){
+		AppendChild(node, true);
+	}
+	void AppendChild(Node* node, bool positive){
+		childs_.push_back(node);
+		positives_.push_back(positive);
+	}
+	~MutilpleNode();
+protected:
+	std::vector<Node*> childs_;
+	std::vector<bool> positives_;
+};
 
+class SumNode : public MutilpleNode{
+public:
+	SumNode(Node* node) : MutilpleNode(node){}
+	double Calc() const;
+};
+
+class ProductNode : public MutilpleNode{
+	public:
+		ProductNode(Node* node) : MutilpleNode(node){}
+		double Calc() const;
+};
+#endif	//_NODE_H_
