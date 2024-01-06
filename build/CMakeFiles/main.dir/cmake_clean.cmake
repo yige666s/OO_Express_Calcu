@@ -7,6 +7,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/parser.cpp.o.d"
   "CMakeFiles/main.dir/scanner.cpp.o"
   "CMakeFiles/main.dir/scanner.cpp.o.d"
+  "CMakeFiles/main.dir/storage.cpp.o"
+  "CMakeFiles/main.dir/storage.cpp.o.d"
+  "CMakeFiles/main.dir/symbol_table.cpp.o"
+  "CMakeFiles/main.dir/symbol_table.cpp.o.d"
   "main"
   "main.pdb"
 )

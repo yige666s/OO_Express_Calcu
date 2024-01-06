@@ -225,6 +225,54 @@ scanner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/scanner.cpp.s
 .PHONY : scanner.cpp.s
 
+storage.o: storage.cpp.o
+.PHONY : storage.o
+
+# target to build an object file
+storage.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/storage.cpp.o
+.PHONY : storage.cpp.o
+
+storage.i: storage.cpp.i
+.PHONY : storage.i
+
+# target to preprocess a source file
+storage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/storage.cpp.i
+.PHONY : storage.cpp.i
+
+storage.s: storage.cpp.s
+.PHONY : storage.s
+
+# target to generate assembly for a file
+storage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/storage.cpp.s
+.PHONY : storage.cpp.s
+
+symbol_table.o: symbol_table.cpp.o
+.PHONY : symbol_table.o
+
+# target to build an object file
+symbol_table.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/symbol_table.cpp.o
+.PHONY : symbol_table.cpp.o
+
+symbol_table.i: symbol_table.cpp.i
+.PHONY : symbol_table.i
+
+# target to preprocess a source file
+symbol_table.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/symbol_table.cpp.i
+.PHONY : symbol_table.cpp.i
+
+symbol_table.s: symbol_table.cpp.s
+.PHONY : symbol_table.s
+
+# target to generate assembly for a file
+symbol_table.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/symbol_table.cpp.s
+.PHONY : symbol_table.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -246,6 +294,12 @@ help:
 	@echo "... scanner.o"
 	@echo "... scanner.i"
 	@echo "... scanner.s"
+	@echo "... storage.o"
+	@echo "... storage.i"
+	@echo "... storage.s"
+	@echo "... symbol_table.o"
+	@echo "... symbol_table.i"
+	@echo "... symbol_table.s"
 .PHONY : help
 
 
