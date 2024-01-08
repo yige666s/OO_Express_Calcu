@@ -2,10 +2,12 @@
 #include <string>
 #include "scanner.h"
 #include "parser.h"
+#include "Calc.h"
 
 int main(void)
 {
 
+	Calc calc;
 	STATUS status = STATUS_OK;
 	do 
 	{
@@ -14,7 +16,7 @@ int main(void)
 		std::getline(std::cin, buf);
 		// std::cout<<buf<<std::endl;
 		Scanner scanner(buf);
-		Parser parser(scanner);
+		Parser parser(scanner,calc);
 		parser.Parse();
 		std::cout<<parser.Calculate()<<std::endl;
 	} while (status != STATUS_QUIT);

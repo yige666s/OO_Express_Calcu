@@ -2,6 +2,9 @@
 #define _NODE_H_
 
 #include <vector>
+#include <cassert>
+
+class Storage;
 
 class Noncopyable{
 protected:
@@ -15,6 +18,8 @@ private:
 class Node : private Noncopyable{	// Node实现继承Noncopyable，不需要实现Nonecopyable接口
 	public:
 		virtual double Calc() const= 0;
+		virtual bool IsLvalue() const{return false;}
+		virtual void Assign(double val){assert(!"Assign called incorrectlly");}
 		virtual ~Node(){}
 };
 
@@ -97,6 +102,25 @@ public:
 class ProductNode : public MutilpleNode{
 	public:
 		ProductNode(Node* node) : MutilpleNode(node){}
+		double Calc() const;
+};
+
+class VariableNode : public Node{
+	public:
+		VariableNode(unsigned int id, Storage& storage): id_(id), storage_(storage){}
+		double Calc() const;
+		bool IsLvalue() const;
+		void Assign(double val);
+	private:
+		const unsigned int id_;
+		Storage& storage_;
+};
+
+class AssignNode : public BinaryNode{
+	public:
+		AssignNode(Node* left,Node* right) : BinaryNode(left,right){
+			assert(left->IsLvalue());
+		}
 		double Calc() const;
 };
 #endif	//_NODE_H_

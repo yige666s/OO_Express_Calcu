@@ -22,6 +22,7 @@ public:
 	Scanner(const std::string& buf);
 	void Accept();
 	double Number() const;
+	std::string GetSymbol() const;
 	EToken Token() const;
 private:
 	void SkipWhite();
@@ -29,6 +30,7 @@ private:
 	unsigned int curPos_;
 	EToken token_;
 	double number_;
+	std::string symbol_;
 };
 
 #endif // _SCANNER_H_

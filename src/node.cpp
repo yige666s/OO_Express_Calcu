@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cassert>
 #include <cmath>
+#include "storage.h"
 
  double NumberNode::Calc() const{
 	return number_;
@@ -81,4 +82,30 @@ double ProductNode::Calc() const{
 		}
 	}
 	assert(positiveIt == positives_.end());
+}
+
+
+double VariableNode::Calc() const{
+	double x = 0.0;
+	if(storage_.IsInit(id_)){	//变量的值保存在storage中
+		x = storage_.GetVal(id_);
+	}else{
+		std::cout<<"Use Uninitialized Variable: "<<id_<<std::endl;
+	}
+	return x;
+}
+
+bool VariableNode::IsLvalue() const {
+	return true;	//只有变量是左值,其他Node都不是左值
+}
+
+void VariableNode::Assign(double val){
+	storage_.SetVal(id_, val);
+}
+
+double AssignNode::Calc() const{
+	double x = 0.0;
+	x = right_ ->Calc();
+	left_->Assign(x);
+	return x;
 }

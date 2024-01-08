@@ -11,6 +11,10 @@ double Scanner::Number() const
 	return number_;
 }
 
+std::string Scanner::GetSymbol() const{
+	return symbol_;
+}
+
 EToken Scanner::Token() const
 {
 	return token_;
@@ -43,6 +47,10 @@ void Scanner::Accept()
 		token_ = TOKEN_DIVIDE;
 		++curPos_;
 		break;
+	case '=':
+		token_ = TOEKN_ASSIGN;
+		++curPos_;
+		break;
 	case '(':
 		token_ = TOKEN_LPAREN;
 		++curPos_;
@@ -63,7 +71,19 @@ void Scanner::Accept()
 		token_ = TOKEN_END;
 		break;
 	default:
-		token_ = TOKEN_ERROR;
+		if(isalpha(buf_[curPos_]) || buf_[curPos_] == '_'){	//以字母或下划线开头
+			token_ = TOEKN_IDENTIFIER;
+			symbol_.erase();
+			char ch = buf_[curPos_];
+			do
+			{
+				symbol_ += ch;
+				++curPos_;
+				ch = buf_[curPos_];
+			} while (isalnum(ch) || ch == '_');	//标识符只包含字母,数字或下划线
+		}
+		else
+			token_ = TOKEN_ERROR;
 		break;
 	}
 }

@@ -3,8 +3,9 @@
 #include <cassert>
 #include "scanner.h"
 #include "node.h"
+#include "Calc.h"
 
-Parser::Parser(Scanner& scanner) : scanner_(scanner), tree_(0){
+Parser::Parser(Scanner& scanner, Calc& calc) : scanner_(scanner), calc_(calc), tree_(0){
 
 }
 
@@ -35,7 +36,18 @@ Node* Parser::Expr(){
 		}while(token == TOKEN_PLUS || TOKEN_MINUS);
 		node = mutipleNode; 
 	}
-
+	else if(token ==TOEKN_ASSIGN){
+		//Expr := Term = Expr
+		scanner_.Accept();
+		Node* nodeRight = Expr();
+		if(node->IsLvalue()){
+			node = new AssignNode(node, nodeRight);
+		}else{
+			status_ = STATUS_ERROR;
+			std::cout<<"Error: lvalue required"<<std::endl;
+			// TODO 抛出异常
+		}
+	}
 	return node;
 }
 
@@ -82,6 +94,14 @@ Node* Parser::Factor(){
 	}else if (token == TOKEN_NUMBER){
 		node = new NumberNode(scanner_.Number());
 		scanner_.Accept();
+	}else if(token == TOEKN_IDENTIFIER){
+		std::string symbol = scanner_.GetSymbol();
+		unsigned int id = calc_.FindSymbol(symbol);
+		scanner_.Accept();
+		if(id == SymbolTable::IDNOTFOUND){
+			id = calc_.AddSymbol(symbol);
+		}
+		node = new VariableNode(id, calc_.GetStorage());
 	}else if(token == TOKEN_MINUS){
 		scanner_.Accept();  //accept minus
 		node = new UminsNode(Factor());
