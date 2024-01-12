@@ -5,12 +5,17 @@
 #include "node.h"
 #include "Calc.h"
 
-Parser::Parser(Scanner& scanner, Calc& calc) : scanner_(scanner), calc_(calc), tree_(0){
+Parser::Parser(Scanner& scanner, Calc& calc) : 
+	scanner_(scanner), calc_(calc), tree_(0),status_(STATUS_OK){
 
 }
 
-void Parser::Parse(){
+STATUS Parser::Parse(){
 	tree_ = Expr();
+	if(!scanner_.IsDone()){
+		status_ = STATUS_ERROR;
+	}
+	return status_;
 }
 
 Node* Parser::Expr(){
@@ -98,10 +103,27 @@ Node* Parser::Factor(){
 		std::string symbol = scanner_.GetSymbol();
 		unsigned int id = calc_.FindSymbol(symbol);
 		scanner_.Accept();
-		if(id == SymbolTable::IDNOTFOUND){
+		if(scanner_.Token() == TOKEN_LPAREN){
+			scanner_.Accept();	// accept '('
+			node = Expr();
+			if(scanner_.Token() == TOKEN_RPAREN){
+				scanner_.Accept();	// accpet ')'
+				if(id != SymbolTable::IDNOTFOUND && calc_.IsFunction(id)){
+					node = new FunctionNode(node, calc_.GetFunction(id));
+				}else{
+					status_ = STATUS_ERROR;
+					std::cout<<"Unknown function"<<"\""<<symbol<<"\""<<std::endl;
+				}
+			}else{
+				status_ = STATUS_ERROR;
+				std::cout<<"missing parenthesis"<<std::endl; 
+			}
+		}else{
+			if(id == SymbolTable::IDNOTFOUND){
 			id = calc_.AddSymbol(symbol);
+			}
+			node = new VariableNode(id, calc_.GetStorage());
 		}
-		node = new VariableNode(id, calc_.GetStorage());
 	}else if(token == TOKEN_MINUS){
 		scanner_.Accept();  //accept minus
 		node = new UminsNode(Factor());

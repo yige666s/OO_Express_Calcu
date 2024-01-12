@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <cassert>
+#include "function_table.h"
 
 class Storage;
 
@@ -78,6 +79,15 @@ class UminsNode : public UnaryNode{
 		double Calc() const;
 };
 
+class FunctionNode : public UnaryNode{
+	public:
+		FunctionNode(Node* child, PtrFun pFun)
+			: UnaryNode(child), pFun_(pFun){}
+		double Calc() const;
+	private:
+		PtrFun pFun_;
+};
+
 class MutilpleNode : public Node{
 public:
 	MutilpleNode(Node* node){
@@ -123,4 +133,5 @@ class AssignNode : public BinaryNode{
 		}
 		double Calc() const;
 };
+
 #endif	//_NODE_H_

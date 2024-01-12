@@ -22,6 +22,8 @@ public:
 	Scanner(const std::string& buf);
 	void Accept();
 	double Number() const;
+	bool IsEmpty() const;
+	bool IsDone() const;
 	std::string GetSymbol() const;
 	EToken Token() const;
 private:
@@ -31,6 +33,7 @@ private:
 	EToken token_;
 	double number_;
 	std::string symbol_;
+	bool isEmpty_;
 };
 
 #endif // _SCANNER_H_

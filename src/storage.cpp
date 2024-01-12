@@ -1,5 +1,6 @@
 #include "storage.h"
 #include <cmath>
+#include <iostream>
 #include <cassert>
 #include "symbol_table.h"
 
@@ -17,9 +18,11 @@ bool Storage::IsInit(unsigned int id) const{
 void Storage::AddConstants(SymbolTable& tbl){
 	unsigned int id = tbl.Add("e");
 	AddVal(id, exp(1.0));	//符号存在符号表，值存在storage
+	std::cout<<"e = "<<exp(1.0)<<std::endl;
 
 	id = tbl.Add("pi");
 	AddVal(id,2.0*acos(0.0));	//反余弦 pi = 2*acos(0 )
+	std::cout<<"pi= "<<2.0*acos(0.0)<<std::endl;
 }
 double Storage::GetVal(unsigned int id) const{
 	assert(id < cells_.size());

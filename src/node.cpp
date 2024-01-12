@@ -39,6 +39,10 @@ double UminsNode::Calc () const{
 	return - child_->Calc();
 }
 
+double FunctionNode::Calc() const{
+	return (*pFun_)(child_->Calc());
+}
+
 UnaryNode::~UnaryNode()
 {
 	delete child_; 	 

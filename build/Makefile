@@ -129,6 +129,30 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+Calc.o: Calc.cpp.o
+.PHONY : Calc.o
+
+# target to build an object file
+Calc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Calc.cpp.o
+.PHONY : Calc.cpp.o
+
+Calc.i: Calc.cpp.i
+.PHONY : Calc.i
+
+# target to preprocess a source file
+Calc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Calc.cpp.i
+.PHONY : Calc.cpp.i
+
+Calc.s: Calc.cpp.s
+.PHONY : Calc.s
+
+# target to generate assembly for a file
+Calc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Calc.cpp.s
+.PHONY : Calc.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -282,6 +306,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... Calc.o"
+	@echo "... Calc.i"
+	@echo "... Calc.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -14,7 +14,7 @@ enum STATUS{
 class Parser{
 public:
 	Parser(Scanner& scanner,Calc& calc);
-	void Parse();
+	STATUS Parse();
 	Node* Expr();
 	Node* Term();
 	Node* Factor();
