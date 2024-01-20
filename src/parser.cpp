@@ -1,9 +1,11 @@
 #include "parser.h"
 #include <iostream>
 #include <cassert>
+#include <cstring>
 #include "scanner.h"
 #include "node.h"
 #include "Calc.h"
+#include "Exception.h"
 
 Parser::Parser(Scanner& scanner, Calc& calc) : 
 	scanner_(scanner), calc_(calc), tree_(0),status_(STATUS_OK){
@@ -49,8 +51,9 @@ Node* Parser::Expr(){
 			node = new AssignNode(node, nodeRight);
 		}else{
 			status_ = STATUS_ERROR;
-			std::cout<<"Error: lvalue required"<<std::endl;
+			// std::cout<<"Error: lvalue required"<<std::endl;
 			// TODO 抛出异常
+			throw SyntaxError("Error: lvalue required");
 		}
 	}
 	return node;
@@ -93,7 +96,8 @@ Node* Parser::Factor(){
 		}else{
 			status_ = STATUS_ERROR;
 			// TODO:抛出异常
-			std::cout<<"missing parenthesis"<<std::endl;
+			// std::cout<<"missing parenthesis"<<std::endl;
+			throw SyntaxError("missing parenthesis");
 			node = 0;
 		}
 	}else if (token == TOKEN_NUMBER){
@@ -112,11 +116,16 @@ Node* Parser::Factor(){
 					node = new FunctionNode(node, calc_.GetFunction(id));
 				}else{
 					status_ = STATUS_ERROR;
-					std::cout<<"Unknown function"<<"\""<<symbol<<"\""<<std::endl;
+					// std::cout<<"Unknown function"<<"\""<<symbol<<"\""<<std::endl;
+					char buf[256] = {0};
+					sprintf(buf, "Unknown function \"%s\"", symbol.c_str());
+					// TODO 抛出异常
+					throw SyntaxError(buf);	
 				}
 			}else{
 				status_ = STATUS_ERROR;
-				std::cout<<"missing parenthesis"<<std::endl; 
+				// std::cout<<"missing parenthesis"<<std::endl; 
+				throw SyntaxError("missing parenthesis");
 			}
 		}else{
 			if(id == SymbolTable::IDNOTFOUND){
@@ -130,7 +139,8 @@ Node* Parser::Factor(){
 	}else{
 		status_ = STATUS_ERROR;
 		//TODO:抛出异常
-		std::cout<<"Not a valid expression"<<std::endl;
+		// std::cout<<"Not a valid expression"<<std::endl;
+		throw SyntaxError("Not a valid expression");
 		node = 0;
 	}
 	return node;

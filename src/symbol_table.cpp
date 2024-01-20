@@ -1,5 +1,6 @@
 #include "symbol_table.h"
 #include <algorithm>
+#include "Exception.h"
 
 unsigned int SymbolTable::Add(const std::string& str){
 	dictionary_[str] = curId_;
@@ -11,8 +12,8 @@ unsigned int SymbolTable::Find(const std::string& str) const {
 		it = dictionary_.find(str);
 		if(it != dictionary_.end())
 			return it->second;
+		}
 		return IDNOTFOUND;
-	}
 }
 
 void SymbolTable::Clear(){
@@ -35,5 +36,8 @@ class IsEqualId{
 
 std::string SymbolTable::GetSymbolName(unsigned int id) const {
 	auto it = find_if(dictionary_.begin(), dictionary_.end(), IsEqualId(id)); 	/*[id](const std::pair<const std::string,unsigned int>& p){return p.second == id;}*/
+	if(it == dictionary_.end()){
+		throw Exception("Internal Error:missing entry in symbol table!");
+	}
 	return it->first;
 }

@@ -67,6 +67,7 @@ double SumNode::Calc() const{
 			result -= val;
 	}
 	assert(positiveIt == positives_.end());
+	return result;
 }
 
 double ProductNode::Calc() const{
@@ -86,6 +87,7 @@ double ProductNode::Calc() const{
 		}
 	}
 	assert(positiveIt == positives_.end());
+	return result;
 }
 
 

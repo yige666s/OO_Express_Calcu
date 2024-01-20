@@ -153,6 +153,54 @@ Calc.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Calc.cpp.s
 .PHONY : Calc.cpp.s
 
+Exception.o: Exception.cpp.o
+.PHONY : Exception.o
+
+# target to build an object file
+Exception.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Exception.cpp.o
+.PHONY : Exception.cpp.o
+
+Exception.i: Exception.cpp.i
+.PHONY : Exception.i
+
+# target to preprocess a source file
+Exception.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Exception.cpp.i
+.PHONY : Exception.cpp.i
+
+Exception.s: Exception.cpp.s
+.PHONY : Exception.s
+
+# target to generate assembly for a file
+Exception.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Exception.cpp.s
+.PHONY : Exception.cpp.s
+
+function_table.o: function_table.cpp.o
+.PHONY : function_table.o
+
+# target to build an object file
+function_table.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/function_table.cpp.o
+.PHONY : function_table.cpp.o
+
+function_table.i: function_table.cpp.i
+.PHONY : function_table.i
+
+# target to preprocess a source file
+function_table.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/function_table.cpp.i
+.PHONY : function_table.cpp.i
+
+function_table.s: function_table.cpp.s
+.PHONY : function_table.s
+
+# target to generate assembly for a file
+function_table.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/function_table.cpp.s
+.PHONY : function_table.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -309,6 +357,12 @@ help:
 	@echo "... Calc.o"
 	@echo "... Calc.i"
 	@echo "... Calc.s"
+	@echo "... Exception.o"
+	@echo "... Exception.i"
+	@echo "... Exception.s"
+	@echo "... function_table.o"
+	@echo "... function_table.i"
+	@echo "... function_table.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

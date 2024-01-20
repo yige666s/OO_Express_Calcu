@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/main.dir/Calc.cpp.o"
   "CMakeFiles/main.dir/Calc.cpp.o.d"
+  "CMakeFiles/main.dir/Exception.cpp.o"
+  "CMakeFiles/main.dir/Exception.cpp.o.d"
+  "CMakeFiles/main.dir/function_table.cpp.o"
+  "CMakeFiles/main.dir/function_table.cpp.o.d"
   "CMakeFiles/main.dir/main.cpp.o"
   "CMakeFiles/main.dir/main.cpp.o.d"
   "CMakeFiles/main.dir/node.cpp.o"

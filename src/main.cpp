@@ -1,14 +1,15 @@
 #include <iostream>
 #include <string>
-#include "scanner.h"
 #include "parser.h"
+#include "scanner.h"
+#include "Exception.h"
 #include "Calc.h"
 
 int main(void)
 {
 
 	Calc calc;
-	STATUS status;
+	STATUS status = STATUS_OK;
 	do 
 	{
 		std::cout<<"> ";
@@ -18,12 +19,27 @@ int main(void)
 		Scanner scanner(buf);
 		if(!scanner.IsEmpty()){
 			Parser parser(scanner,calc);
-			status = parser.Parse();
-			if(status == STATUS_OK){
-				std::cout<<parser.Calculate()<<std::endl;
-			}else{
-				std::cout<<"Syntax Error!"<<std::endl;
+			try
+			{
+				status = parser.Parse();
+				if(status == STATUS_OK){
+					std::cout<<parser.Calculate()<<std::endl;
+				}
 			}
+			catch(SyntaxError& e){
+				std::cout<<e.what()<<std::endl;
+			}
+			catch(Exception& e){
+				std::cout<<e.what()<<std::endl;
+			}catch(...){
+				std::cout<<"Internal Error!"<<std::endl;
+			}
+			// status = parser.Parse();
+			// if(status == STATUS_OK){
+			// 	std::cout<<parser.Calculate()<<std::endl;
+			// }else{
+			// 	std::cout<<"error"<<std::endl;
+			// }
 		}else{
 			std::cout<<"Expression is empty!"<<std::endl;
 		}

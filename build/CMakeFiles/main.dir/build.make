@@ -83,10 +83,38 @@ CMakeFiles/main.dir/Calc.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/Calc.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yige666/bsae_programming/cpp/OO_express_calcu/src/Calc.cpp -o CMakeFiles/main.dir/Calc.cpp.s
 
+CMakeFiles/main.dir/Exception.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/Exception.cpp.o: /home/yige666/bsae_programming/cpp/OO_express_calcu/src/Exception.cpp
+CMakeFiles/main.dir/Exception.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/Exception.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Exception.cpp.o -MF CMakeFiles/main.dir/Exception.cpp.o.d -o CMakeFiles/main.dir/Exception.cpp.o -c /home/yige666/bsae_programming/cpp/OO_express_calcu/src/Exception.cpp
+
+CMakeFiles/main.dir/Exception.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/Exception.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yige666/bsae_programming/cpp/OO_express_calcu/src/Exception.cpp > CMakeFiles/main.dir/Exception.cpp.i
+
+CMakeFiles/main.dir/Exception.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/Exception.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yige666/bsae_programming/cpp/OO_express_calcu/src/Exception.cpp -o CMakeFiles/main.dir/Exception.cpp.s
+
+CMakeFiles/main.dir/function_table.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/function_table.cpp.o: /home/yige666/bsae_programming/cpp/OO_express_calcu/src/function_table.cpp
+CMakeFiles/main.dir/function_table.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/function_table.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/function_table.cpp.o -MF CMakeFiles/main.dir/function_table.cpp.o.d -o CMakeFiles/main.dir/function_table.cpp.o -c /home/yige666/bsae_programming/cpp/OO_express_calcu/src/function_table.cpp
+
+CMakeFiles/main.dir/function_table.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/function_table.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yige666/bsae_programming/cpp/OO_express_calcu/src/function_table.cpp > CMakeFiles/main.dir/function_table.cpp.i
+
+CMakeFiles/main.dir/function_table.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/function_table.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yige666/bsae_programming/cpp/OO_express_calcu/src/function_table.cpp -o CMakeFiles/main.dir/function_table.cpp.s
+
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/main.cpp.o: /home/yige666/bsae_programming/cpp/OO_express_calcu/src/main.cpp
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /home/yige666/bsae_programming/cpp/OO_express_calcu/src/main.cpp
 
 CMakeFiles/main.dir/main.cpp.i: cmake_force
@@ -100,7 +128,7 @@ CMakeFiles/main.dir/main.cpp.s: cmake_force
 CMakeFiles/main.dir/node.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/node.cpp.o: /home/yige666/bsae_programming/cpp/OO_express_calcu/src/node.cpp
 CMakeFiles/main.dir/node.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/node.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/node.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/node.cpp.o -MF CMakeFiles/main.dir/node.cpp.o.d -o CMakeFiles/main.dir/node.cpp.o -c /home/yige666/bsae_programming/cpp/OO_express_calcu/src/node.cpp
 
 CMakeFiles/main.dir/node.cpp.i: cmake_force
@@ -114,7 +142,7 @@ CMakeFiles/main.dir/node.cpp.s: cmake_force
 CMakeFiles/main.dir/parser.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/parser.cpp.o: /home/yige666/bsae_programming/cpp/OO_express_calcu/src/parser.cpp
 CMakeFiles/main.dir/parser.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/parser.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/parser.cpp.o -MF CMakeFiles/main.dir/parser.cpp.o.d -o CMakeFiles/main.dir/parser.cpp.o -c /home/yige666/bsae_programming/cpp/OO_express_calcu/src/parser.cpp
 
 CMakeFiles/main.dir/parser.cpp.i: cmake_force
@@ -128,7 +156,7 @@ CMakeFiles/main.dir/parser.cpp.s: cmake_force
 CMakeFiles/main.dir/scanner.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/scanner.cpp.o: /home/yige666/bsae_programming/cpp/OO_express_calcu/src/scanner.cpp
 CMakeFiles/main.dir/scanner.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/scanner.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/scanner.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/scanner.cpp.o -MF CMakeFiles/main.dir/scanner.cpp.o.d -o CMakeFiles/main.dir/scanner.cpp.o -c /home/yige666/bsae_programming/cpp/OO_express_calcu/src/scanner.cpp
 
 CMakeFiles/main.dir/scanner.cpp.i: cmake_force
@@ -142,7 +170,7 @@ CMakeFiles/main.dir/scanner.cpp.s: cmake_force
 CMakeFiles/main.dir/storage.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/storage.cpp.o: /home/yige666/bsae_programming/cpp/OO_express_calcu/src/storage.cpp
 CMakeFiles/main.dir/storage.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/storage.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/storage.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/storage.cpp.o -MF CMakeFiles/main.dir/storage.cpp.o.d -o CMakeFiles/main.dir/storage.cpp.o -c /home/yige666/bsae_programming/cpp/OO_express_calcu/src/storage.cpp
 
 CMakeFiles/main.dir/storage.cpp.i: cmake_force
@@ -156,7 +184,7 @@ CMakeFiles/main.dir/storage.cpp.s: cmake_force
 CMakeFiles/main.dir/symbol_table.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/symbol_table.cpp.o: /home/yige666/bsae_programming/cpp/OO_express_calcu/src/symbol_table.cpp
 CMakeFiles/main.dir/symbol_table.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/symbol_table.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/symbol_table.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/symbol_table.cpp.o -MF CMakeFiles/main.dir/symbol_table.cpp.o.d -o CMakeFiles/main.dir/symbol_table.cpp.o -c /home/yige666/bsae_programming/cpp/OO_express_calcu/src/symbol_table.cpp
 
 CMakeFiles/main.dir/symbol_table.cpp.i: cmake_force
@@ -170,6 +198,8 @@ CMakeFiles/main.dir/symbol_table.cpp.s: cmake_force
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/Calc.cpp.o" \
+"CMakeFiles/main.dir/Exception.cpp.o" \
+"CMakeFiles/main.dir/function_table.cpp.o" \
 "CMakeFiles/main.dir/main.cpp.o" \
 "CMakeFiles/main.dir/node.cpp.o" \
 "CMakeFiles/main.dir/parser.cpp.o" \
@@ -181,6 +211,8 @@ main_OBJECTS = \
 main_EXTERNAL_OBJECTS =
 
 main: CMakeFiles/main.dir/Calc.cpp.o
+main: CMakeFiles/main.dir/Exception.cpp.o
+main: CMakeFiles/main.dir/function_table.cpp.o
 main: CMakeFiles/main.dir/main.cpp.o
 main: CMakeFiles/main.dir/node.cpp.o
 main: CMakeFiles/main.dir/parser.cpp.o
@@ -189,7 +221,7 @@ main: CMakeFiles/main.dir/storage.cpp.o
 main: CMakeFiles/main.dir/symbol_table.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yige666/bsae_programming/cpp/OO_express_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
